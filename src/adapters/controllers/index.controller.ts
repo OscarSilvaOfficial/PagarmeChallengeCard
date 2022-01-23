@@ -1,16 +1,15 @@
 import { IHttpServer } from "../../infra/frameworks/web/interfaces/http";
 
-export const test = (http: IHttpServer) => {
+export const IndexController = (http: IHttpServer) => {
   
   @http.controller('/')
-  class TestController {
+  class IndexController {
     @http.get('/')
     test(@http.response() res: any) {
-      console.log('test');
       res.send('Hello World');
     }
   }
 
-  return TestController;
+  return IndexController;
   
 }

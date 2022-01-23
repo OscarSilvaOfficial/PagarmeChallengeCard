@@ -1,7 +1,8 @@
 import { ExpressServer } from './infra/frameworks/web/ExpressServer'
-import { test as TestController } from './adapters/controllers/test.controller'
+import { IndexController } from './adapters/controllers/index.controller'
 
 const httpServer = new ExpressServer()
-const controllers = [TestController];
+const controllers = [IndexController];
+const app = httpServer.run(controllers.map((c: any) => c(httpServer)));
 
-httpServer.run(controllers.map((c: any) => c(httpServer)));
+export { app }
