@@ -1,13 +1,7 @@
-import { ExpressServer } from './infra/frameworks/web/express'
+import { ExpressServer } from './infra/frameworks/web/ExpressServer'
+import { test as TestController } from './adapters/controllers/test.controller'
 
-const test = new ExpressServer();
+const httpServer = new ExpressServer()
+const controllers = [TestController];
 
-@test.controller('/e')
-class TestController {
-  @test.get('/')
-  public test(req: any, res: any) {
-    res.send('Hello World');
-  }
-}
-
-ExpressServer.run([TestController]);
+httpServer.run(controllers.map((c: any) => c(httpServer)));
