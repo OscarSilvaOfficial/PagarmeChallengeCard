@@ -1,8 +1,8 @@
 import { IHttpServer } from "../../infra/frameworks/web/interfaces/http";
 
-export const IndexController = (http: IHttpServer) => {
+export const CardController = (http: IHttpServer) => {
   
-  @http.controller('/')
+  @http.controller('/cards')
   class Controller {
 
     @http.get('/')
