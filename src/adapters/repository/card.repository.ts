@@ -2,7 +2,7 @@ import { IRepository } from "./interfaces/repository.interface";
 
 class CardRepository implements IRepository {
 
-  getById(id: string | number): Promise<any> {
+  getByNumber(number: string): Promise<any> {
     return new Promise(() => {})
   }
 
@@ -14,11 +14,11 @@ class CardRepository implements IRepository {
     return new Promise(() => {})
   }
 
-  update(id: string | number, item: any): Promise<any> {
+  update(number: string, item: any): Promise<any> {
     return new Promise(() => {})
   }
 
-  delete(id: string | number): Promise<void> {
+  delete(number: string): Promise<void> {
     return new Promise(() => {})
   }
 

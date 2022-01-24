@@ -1,9 +1,9 @@
 interface IRepository {
-  getById(id: string | number): Promise<any>;
+  getByNumber(number: string): Promise<any>;
   getAll(): Promise<any[]>;
   create(item: any): Promise<any>;
-  update(id: string | number, item: any): Promise<any>;
-  delete(id: string | number): Promise<void>;
+  update(number: string, item: any): Promise<any>;
+  delete(number: string): Promise<void>;
 }
 
 export { IRepository };
