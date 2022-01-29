@@ -5,6 +5,7 @@
   "main": "main.ts",
   "dependencies": {
     "express": "^4.17.2",
+    "mongoose": "^6.1.8",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
