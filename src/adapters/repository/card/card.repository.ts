@@ -1,6 +1,13 @@
+import { INoSQLDB } from "../../../infra/frameworks/db/interfaces/nosql.interface";
 import { ICardRepository } from "./interfaces/repository.interface";
 
 class CardRepository implements ICardRepository {
+
+  private db: INoSQLDB;
+
+  constructor(db: INoSQLDB) {
+    this.db = db;
+  }
 
   getCard(number: string): Promise<any> {
     return new Promise(() => {})
