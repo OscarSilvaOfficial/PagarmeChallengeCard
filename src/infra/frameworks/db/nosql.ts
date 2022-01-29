@@ -17,8 +17,16 @@ class MongoDB implements INoSQLDB {
     this.collection = model(collectionName, this.schema);
   }
 
-  async createConnection() {
+  private async createConnection() {
     await connect(`${this.dbConnectionString}/${this.dbName}`);
+  }
+
+  changeSchema(schema: Schema) {
+    this.schema = schema;
+  }
+
+  changeCollection(collectionName: string) {
+    this.collection = model(collectionName, this.schema);
   }
 
   all(filter: object | undefined = {}) {
