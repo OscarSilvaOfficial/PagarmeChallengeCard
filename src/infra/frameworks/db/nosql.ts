@@ -12,9 +12,9 @@ class MongoDB implements INoSQLDB {
   constructor(dbConnectionString: string, dbName: string, collectionName: string, schema: Schema) {
     this.dbConnectionString =  dbConnectionString;
     this.dbName = dbName;
-    this.createConnection();
     this.schema = schema;
     this.collection = model(collectionName, this.schema);
+    this.createConnection();
   }
 
   private async createConnection() {
